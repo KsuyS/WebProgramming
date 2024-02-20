@@ -1,0 +1,130 @@
+* {
+    font-family: "Lora", serif;
+    color: black;
+    font-size: 11px;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1440;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav {
+    height: 74px;
+    margin-bottom: 80px;
+    padding-left: 250px;
+    padding-top: 20px;
+    padding-right: 250px;
+    vertical-align: middle;
+    display: flex;  
+}
+
+
+.nav ul {
+    width: 376.61px;
+    height: 40px;
+    left: 563.39px;
+    display: flex;  
+    list-style: none;
+    padding-left: 500px;
+}
+
+.nav li {
+    text-transform: uppercase;
+    font-family: "Oxygen", serif;
+    line-height: 26px;
+    letter-spacing: 1px;
+    text-align: right;
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.nav p {
+    font-size: 26px;
+    display: inline-block;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.nav_about {
+    font-size: 11px;
+}
+
+.intro {
+    top: 163px;
+    height: 159px;
+}
+
+.intro h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #2E2E2E;
+    line-height: 51px;
+    letter-spacing: 2px;
+}
+
+.intro h2 {
+    font-size: 17px;
+    text-align: center;
+    color: #2E2E2E;
+    opacity: 63%;
+    margin-top: 15px;
+    line-height: 20px;
+}
+
+.images img{
+    width: 100%;
+    height: 534px;
+    top: 360px;
+    border-radius: 3px;
+}
+
+.info {
+    align-content: center;
+    margin-bottom: 200px;
+    margin-top: 7%;
+}
+
+.info p {
+    font-family: "Oxygen", serif;
+    font-size: 24px;
+    color: #101315;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 2%;
+}
+
+.footer {
+    width: 100%;
+    height: 89px;;
+    background-image: url("Images/image2.jpeg");
+    background-size: cover;
+    background-position-y: 50%;
+    background-color: #4D565D;
+}
+
+.footer_nav {
+    width: 1190px;
+    height: 64px;
+    padding-top: 25px;
+    padding-right: 0px;
+}
+
+.footer p { 
+    color: white;
+} 
+
+.footer_nav li {
+    color: white;
+    opacity: 60%;
+}
+
+
