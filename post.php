@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The road Ahead</title>
-    <link rel="stylesheet" href="styles/style-the-road-ahead.css">
+    <link rel="stylesheet" href="/styles/style-post.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
