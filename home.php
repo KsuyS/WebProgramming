@@ -81,7 +81,6 @@ $mostRecentPosts = [
 ?>
 
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,7 +103,7 @@ $mostRecentPosts = [
                 </div>
                 <ul class="navigation__list">
                     <li class="navigation__item">
-                        <a class="navigation__link" href="#">Home</a>
+                        <a class="navigation__link" href='/home'>Home</a>
                     </li>
                     <li class="navigation__item">
                         <a class="navigation__link" href="#">Categories</a>
@@ -124,7 +123,7 @@ $mostRecentPosts = [
             </div>
         </div>
     </header>
-    <main class=" main container">
+    <main class="main container">
         <div class="menu">
             <ul class="menu__list">
                 <li class="menu__item">

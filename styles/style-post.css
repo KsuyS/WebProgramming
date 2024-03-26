@@ -15,7 +15,7 @@
     color: #FFFFFF;
 }
 
-.nav {
+.navigation {
     margin-bottom: 80px;
     padding-left: 250px;
     padding-top: 20px;
@@ -23,7 +23,7 @@
 }
 
 
-.nav ul {
+.navigation__list {
     width: 376.61px;
     height: 40px;
     left: 563.39px;
@@ -32,7 +32,7 @@
     padding-left: 500px;
 }
 
-.nav a {
+.navigation__link {
     text-transform: uppercase;
     font-family: "Oxygen", serif;
     line-height: 26px;
@@ -99,10 +99,10 @@
     height: 89px;
     padding-top: 25px;
     padding-right: 0px;
-    background-color: #4D565D89;
+    background-color: #232F3899;
 }
 
-.footer-nav a {
+.footer__link {
     color: white;
     opacity: 60%;
 }
