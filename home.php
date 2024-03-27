@@ -4,7 +4,7 @@ $featurePosts = [
         'id' => 1,
         'title' => 'The Road Ahead',
         'subtitle' => 'The road ahead might be paved - it might not be.',
-        'img_modifier' => 'images/mat-vogels.png',
+        'img_modifier' => 'http://localhost/images/mat-vogels.png',
         'author' => 'Mat Vogels',
         'date' => 1443128400,
         'class' => 'features__block-article1'
@@ -13,7 +13,7 @@ $featurePosts = [
         'id' => 2,
         'title' => 'From Top Down',
         'subtitle' => 'Once a year, go someplace you’ve never been before.',
-        'img_modifier' => 'images/william-wong.png',
+        'img_modifier' => 'http://localhost/images/william-wong.png',
         'author' => 'William Wong',
         'date' => 1443128400,
         'class' => 'features__block-article2'
@@ -27,7 +27,7 @@ $mostRecentPosts = [
         'id' => 3,
         'title' => 'Still Standing Tall',
         'subtitle' => 'Life begins at the end of your comfort zone.',
-        'img_modifier' => 'images/william-wong.png',
+        'img_modifier' => 'http://localhost/images/william-wong.png',
         'author' => 'William Wong',
         'date' => 1443128400,
         'image_post' => 'images/balloons.png'
@@ -36,7 +36,7 @@ $mostRecentPosts = [
         'id' => 4,
         'title' => 'Sunny Side Up',
         'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
-        'img_modifier' => 'images/mat-vogels.png',
+        'img_modifier' => 'http://localhost/images/mat-vogels.png',
         'author' => 'Mat Vogels',
         'date' => 1443128400,
         'image_post' => 'images/bridge.png'
@@ -45,7 +45,7 @@ $mostRecentPosts = [
         'id' => 5,
         'title' => 'Water Falls',
         'subtitle' => 'We travel not to escape life, but for life not to escape us.',
-        'img_modifier' => 'images/mat-vogels.png',
+        'img_modifier' => 'http://localhost/images/mat-vogels.png',
         'author' => 'Mat Vogels',
         'date' => 1443128400,
         'image_post' => 'images/river.png'
@@ -54,7 +54,7 @@ $mostRecentPosts = [
         'id' => 6,
         'title' => 'Through the Mist',
         'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
-        'img_modifier' => 'images/william-wong.png',
+        'img_modifier' => 'http://localhost/images/william-wong.png',
         'author' => 'William Wong',
         'date' => 1443128400,
         'image_post' => 'images/ocean.png'
@@ -63,7 +63,7 @@ $mostRecentPosts = [
         'id' => 7,
         'title' => 'Awaken Early',
         'subtitle' => 'Not all those who wander are lost.',
-        'img_modifier' => 'images/mat-vogels.png',
+        'img_modifier' => 'http://localhost/images/mat-vogels.png',
         'author' => 'Mat Vogels',
         'date' => 1443128400,
         'image_post' => 'images/fog.png'
@@ -72,7 +72,7 @@ $mostRecentPosts = [
         'id' => 8,
         'title' => 'Try it Always',
         'subtitle' => 'The world is a book, and those who do not travel read only one page.',
-        'img_modifier' => 'images/mat-vogels.png',
+        'img_modifier' => 'http://localhost/images/mat-vogels.png',
         'author' => 'Mat Vogels',
         'date' => 1443128400,
         'image_post' => 'images/waterfall.png'
@@ -86,7 +86,7 @@ $mostRecentPosts = [
 <head>
     <meta charset="UTF-8">
     <title>Main page</title>
-    <link rel="stylesheet" href="./styles/style-home.css">
+    <link rel="stylesheet" href="http://localhost/styles/style-home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -99,7 +99,7 @@ $mostRecentPosts = [
         <div class="container">
             <nav class="navigation">
                 <div class="navigation__logo">
-                    <img src="./images/escape-white.svg" alt="Logo">
+                    <img src="http://localhost/images/escape-white.svg" alt="Logo">
                 </div>
                 <ul class="navigation__list">
                     <li class="navigation__item">
@@ -170,7 +170,7 @@ $mostRecentPosts = [
     <footer class="footer container">
         <nav class="navigation footer-navigation">
             <div class="navigation__logo">
-                <img src="./images/escape-white.svg" alt="Logo">
+                <img src="http://localhost:/images/escape-white.svg" alt="Logo">
             </div>
             <ul class="navigation__list">
                 <li class="navigation__item">
