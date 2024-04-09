@@ -1,85 +1,33 @@
 <?php
-$featurePosts = [
-    [
-        'id' => 1,
-        'title' => 'The Road Ahead',
-        'subtitle' => 'The road ahead might be paved - it might not be.',
-        'img_modifier' => 'http://localhost/images/mat-vogels.png',
-        'author' => 'Mat Vogels',
-        'date' => 1443128400,
-        'class' => 'features__block-article1'
-    ],
-    [
-        'id' => 2,
-        'title' => 'From Top Down',
-        'subtitle' => 'Once a year, go someplace you’ve never been before.',
-        'img_modifier' => 'http://localhost/images/william-wong.png',
-        'author' => 'William Wong',
-        'date' => 1443128400,
-        'class' => 'features__block-article2'
-    ],
-];
-?>
+require_once "database.php";
+function getAndPrintFeaturedPostsFromDB(mysqli $conn): void
+{
+    $sql1 = "SELECT * FROM post WHERE featured = 1";
+    $result = $conn->query($sql1);
 
-<?php
-$mostRecentPosts = [
-    [
-        'id' => 3,
-        'title' => 'Still Standing Tall',
-        'subtitle' => 'Life begins at the end of your comfort zone.',
-        'img_modifier' => 'http://localhost/images/william-wong.png',
-        'author' => 'William Wong',
-        'date' => 1443128400,
-        'image_post' => 'images/balloons.png'
-    ],
-    [
-        'id' => 4,
-        'title' => 'Sunny Side Up',
-        'subtitle' => 'No place is ever as bad as they tell you it’s going to be.',
-        'img_modifier' => 'http://localhost/images/mat-vogels.png',
-        'author' => 'Mat Vogels',
-        'date' => 1443128400,
-        'image_post' => 'images/bridge.png'
-    ],
-    [
-        'id' => 5,
-        'title' => 'Water Falls',
-        'subtitle' => 'We travel not to escape life, but for life not to escape us.',
-        'img_modifier' => 'http://localhost/images/mat-vogels.png',
-        'author' => 'Mat Vogels',
-        'date' => 1443128400,
-        'image_post' => 'images/river.png'
-    ],
-    [
-        'id' => 6,
-        'title' => 'Through the Mist',
-        'subtitle' => 'Travel makes you see what a tiny place you occupy in the world.',
-        'img_modifier' => 'http://localhost/images/william-wong.png',
-        'author' => 'William Wong',
-        'date' => 1443128400,
-        'image_post' => 'images/ocean.png'
-    ],
-    [
-        'id' => 7,
-        'title' => 'Awaken Early',
-        'subtitle' => 'Not all those who wander are lost.',
-        'img_modifier' => 'http://localhost/images/mat-vogels.png',
-        'author' => 'Mat Vogels',
-        'date' => 1443128400,
-        'image_post' => 'images/fog.png'
-    ],
-    [
-        'id' => 8,
-        'title' => 'Try it Always',
-        'subtitle' => 'The world is a book, and those who do not travel read only one page.',
-        'img_modifier' => 'http://localhost/images/mat-vogels.png',
-        'author' => 'Mat Vogels',
-        'date' => 1443128400,
-        'image_post' => 'images/waterfall.png'
-    ],
-];
-?>
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            include 'feature_post_preview.php';
+        }
+    } else {
+        echo "0 results";
+    }
+}
 
+function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
+{
+    $sql1 = "SELECT * FROM post WHERE featured = 0";
+    $result = $conn->query($sql1);
+    
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            include 'most_recent_post_preview.php';
+        }
+    } else {
+        echo "0 results";
+    }
+}
+?>
 
 <html lang="en">
 
@@ -151,18 +99,18 @@ $mostRecentPosts = [
             <hr class="features__line">
             <div class="features__part1">
                 <?php
-                foreach ($featurePosts as $post) {
-                    include 'feature_post_preview.php';
-                }
+                $conn = createDBConnection();
+                getAndPrintFeaturedPostsFromDB($conn);
+                closeDBConnection($conn);
                 ?>
             </div>
             <h3 class="features__heading">Most Recent</h3>
             <hr class="features__line">
             <div class="features__part2">
                 <?php
-                foreach ($mostRecentPosts as $post) {
-                    include 'most_recent_post_preview.php';
-                }
+                $conn = createDBConnection();
+                getAndPrintMostRecentPostsFromDB($conn);
+                closeDBConnection($conn);
                 ?>
             </div>
         </div>

@@ -1,25 +1,25 @@
-<a class="features__link" title='<?= $post['title'] ?>' href='/post?id=<?= $post['id'] ?>'>
+<a class="features__link" title='<?= $row['title'] ?>' href='/post?id=<?= $row['post_id'] ?>'>
     <div class="features__section ">
         <div class="features__block">
-            <img src="<?= $post['image_post'] ?>" class="features__imgs" alt="<?= $post['title'] ?>">
+            <img src="<?= $row['image_post'] ?>" class="features__imgs" alt="<?= $row['title'] ?>">
             <div class="features__description">
                 <h4 class="features__section-head">
-                    <?= $post['title'] ?>
+                    <?= $row['title'] ?>
                 </h4>
                 <h5 class="features__section-subhead">
-                    <?= $post['subtitle'] ?>
+                    <?= $row['subtitle'] ?>
                 </h5>
             </div>
             <div class="features__sign">
                 <div class="features__lab1">
-                    <img src="<?= $post['img_modifier'] ?>" class="features__round" alt="<?= $post['author'] ?>">
+                    <img src="<?= $row['image_author'] ?>" class="features__round" alt="<?= $row['author'] ?>">
                     <p class="features__sign-autor">
-                        <?= $post['author'] ?>
+                        <?= $row['author'] ?>
                     </p>
                 </div>
                 <div class="features__lab2">
                     <p class="features__sign-date">
-                    <?= date("n/d/Y", $post['date']) ?>
+                    <?= date("n/d/y", $row['publish_date']) ?>
                     </p>
                 </div>
             </div>

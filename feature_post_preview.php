@@ -1,24 +1,25 @@
-<a class="features__link" title='<?= $post['title'] ?>' href='/post?id=<?= $post['id'] ?>'>
-    <div class="features__article <?= $post['class'] ?>">
+<a class="features__link" title='<?= $row['title'] ?>' href='/post?id=<?= $row['post_id'] ?>'>
+    <div class="features__article <?= $row['class'] ?>">
         <h4 class="features__article-head">
-            <?= $post['title'] ?>
+            <?= $row['title'] ?>
         </h4>
         <h5 class="features__article-subhead">
-            <?= $post['subtitle'] ?>
+            <?= $row['subtitle'] ?>
         </h5>
         <div class="features__signature">
             <div class="features__label1">
-                <img src="<?= $post['img_modifier'] ?>" class="features__round" alt="<?= $post['author'] ?>">
+                <img src="<?= $row['image_author'] ?>" class="features__round" alt="<?= $row['author'] ?>">
                 <p class="features__signature-autor">
-                    <?= $post['author'] ?>
+                    <?= $row['author'] ?>
                 </p>
             </div>
             <div class="features__label2">
 
                 <p class="features__signature-date">
-                    <?= date("F d Y", $post['date']) ?>
+                    <?= date("F d, Y", $row['publish_date']) ?>
                 </p>
             </div>
         </div>
     </div>
 </a>
+<?php
