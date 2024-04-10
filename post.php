@@ -34,7 +34,7 @@ closeDBConnection($conn);
 
 <head>
     <meta charset="UTF-8">
-    <title>The road Ahead</title>
+    <title><?= $post["title"] ?></title>
     <link rel="stylesheet" href="http://localhost/styles/style-post.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
