@@ -16,7 +16,7 @@
             <div class="features__label2">
 
                 <p class="features__signature-date">
-                    <?= date("F d, Y", $row['publish_date']) ?>
+                    <?= date($row['publish_date']) ?>
                 </p>
             </div>
         </div>

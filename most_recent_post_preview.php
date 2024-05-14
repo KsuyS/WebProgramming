@@ -19,7 +19,7 @@
                 </div>
                 <div class="features__lab2">
                     <p class="features__sign-date">
-                    <?= date("n/d/y", $row['publish_date']) ?>
+                    <?= $row['publish_date'] ?>
                     </p>
                 </div>
             </div>
