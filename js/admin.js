@@ -40,21 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
             postData.authorPhoto = result;
             invalidateAuthorPhotoPreview()
         });
-
-        document.querySelector('.info__upload-new-button').classList.add('info__upload-new-button_downoload')
-        document.querySelector('.info__remove-button').classList.add('info__remove-button_downoload')
+        document.querySelectorAll('.info__upload-new-button')[0].classList.add('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[0].classList.add('info__remove-button_download')
     }
 
     function onDatePostInputChange(event) {
         postData.datePost = event.target.value;
         invalidateDatePreview()
     }
+
     function onPostImageInputChange(event) {
         const file = event.target.files[0];
         readFileAsBase64(file, (result) => {
             postData.postImage = result;
             invalidateImagePreview()
         });
+        document.querySelectorAll('.info__upload-new-button')[2].classList.add('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[2].classList.add('info__remove-button_download')
+        document.querySelectorAll('.indication-for-image')[1].classList.add('indication-for-image_download')
     }
 
     function onMainPostImageInputChange(event) {
@@ -63,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
             postData.mainPostImage = result;
             invalidateMainImagePreview()
         });
+
+        document.querySelectorAll('.info__upload-new-button')[1].classList.add('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[1].classList.add('info__remove-button_download')
+        document.querySelectorAll('.indication-for-image')[0].classList.add('indication-for-image_download')
     }
 
     function readFileAsBase64(file, onload) {
@@ -129,33 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function onPostFormSubmit(event) {
-        /*const post = (postData) => {
-            return fetch("api.php", { // файл-обработчик
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json", // отправляемые данные
-                },
-                body: JSON.stringify(postData)
-            })
-                .then(response => alert("Пост загружен"))
-                .catch(error => console.error(error))
-        };*/
-
         event.preventDefault();
         let form = document.forms['postForm'];
         if (validation(form)) {
             console.log('postData', postData)
-            /*post(postData)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((err) => console.error(err))*/
         }
         
         
     }
-
-
 
 
     function initEventListener() {
@@ -168,6 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
         mainpostImageInput.addEventListener('change', onMainPostImageInputChange)
         postImageInput.addEventListener('change', onPostImageInputChange)
         contentInput.addEventListener('change', onContentInputChange)
+
+        //document.getElementById('postForm').addEventListener('submit', (event) => {
+         //   event.preventDefault();
+          //  }
+        //})
     }
 
 
@@ -223,4 +216,38 @@ document.addEventListener("DOMContentLoaded", () => {
     date.valueAsDate = new Date();
     datePreview.innerText = date.value;
     postData.datePost = date.value;
+
+
+    document.querySelectorAll('.info__remove-button')[0].onclick = deleteImage;
+    document.querySelectorAll('.info__remove-button')[1].onclick = deletePostMainImage;
+    document.querySelectorAll('.info__remove-button')[2].onclick = deletePostImage;
+
+    function deleteImage() {
+        const postPreviewAuthorImage = document.querySelector('.info__avatar-preview')
+        const postPreviewAuthorImage2 = document.querySelector('.info__round')
+        postPreviewAuthorImage.src = "/images/avatar.png";
+        postPreviewAuthorImage2.src = "/images/author.svg";
+        document.querySelectorAll('.info__upload-new-button')[0].classList.remove('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[0].classList.remove('info__remove-button_download')
+    }
+
+    function deletePostMainImage() {
+        const postPreviewAuthorImage = document.querySelector('.info__image-preview-main')
+        const postPreviewAuthorImage2 = document.querySelector('.info__images')
+        postPreviewAuthorImage.src = "/images/main-camera.png";
+        postPreviewAuthorImage2.src = "/images/image.png";
+        document.querySelectorAll('.info__upload-new-button')[1].classList.remove('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[1].classList.remove('info__remove-button_download')
+        document.querySelectorAll('.indication-for-image')[0].classList.remove('indication-for-image_download')
+    }
+
+    function deletePostImage() {
+        const postPreviewAuthorImage = document.querySelector('.info__image-preview')
+        const postPreviewAuthorImage2 = document.querySelector('.info__imgs')
+        postPreviewAuthorImage.src = "/images/camera-post.png";
+        postPreviewAuthorImage2.src = "/images/image.png";
+        document.querySelectorAll('.info__upload-new-button')[2].classList.remove('info__upload-new-button_download')
+        document.querySelectorAll('.info__remove-button')[2].classList.remove('info__remove-button_download')
+        document.querySelectorAll('.indication-for-image')[0].classList.remove('indication-for-image_download')
+    }
 });

@@ -149,6 +149,9 @@
 
 .info__avatar {
     margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
 }
 
 .info__input-author-photo {
@@ -425,11 +428,11 @@
     border: 0;
 }
 
-.info__remove-new-button_download {
+.info__remove-button_download {
     display: flex;
 }
 
-.info__remove-new-button .status-of-form__image {
+.info__remove-button .status-of-form__image {
     background-image: url("/images/Remove.svg");
 }
 
@@ -441,4 +444,12 @@
 
 .info__remove-button .info__button-text {
     color: #E86961
+}
+
+.indication-for-image {
+    display: block;
+}
+
+.indication-for-image_download {
+    display: none;
 }

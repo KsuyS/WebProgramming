@@ -74,6 +74,31 @@
                                 <input class="info__input info__input-author-photo" type="file"
                                     name="author_photo_input" accept=".jpg,.jpeg,.png,.svg"
                                     id="author_photo_input"></input>
+                                <div class="info__upload-new-button">
+                                    <div class="status-of-form__image"></div>
+                                    <span class="info__button-text">Upload New</span>
+                                </div>
+                                <button type="button" class="info__remove-button">
+                                    <div class="status-of-form__image"></div>
+                                    <span class="info__button-text">Remove</span>
+                                </button>
+                            </label>
+                        </div>
+                        <div class="info__form-group">
+                            <h1 class="info__title">Publish Date </h1>
+                            <input class="info__input info__input-publish-date" type="date" name="date_post_input"
+                                id="date_post_input"></input>
+                        </div>
+                        <div class="info__form-group info__form-hero-image">
+                            <h1 class="info__title">Hero Image</h1>
+                            <label class="info__image">
+                                <div class="info__image-preview-box">
+                                    <img class="info__image-preview-main img__preview" id="info__image-preview-main"
+                                        src="/images/main-camera.png" alt="Image preview" />
+                                </div>
+                                <input class="info__input info__input-hero-image" type="file"
+                                    name="main_post_image_input" accept=".jpg,.jpeg,.png,.svg"
+                                    id="main_post_image_input"></input>
                                 <div class="info__button-box">
                                     <div class="info__upload-new-button">
                                         <div class="status-of-form__image"></div>
@@ -85,36 +110,29 @@
                                     </button>
                                 </div>
                             </label>
-                        </div>
-                        <div class="info__form-group">
-                            <h1 class="info__title">Publish Date </h1>
-                            <input class="info__input info__input-publish-date" type="date" name="date_post_input"
-                                id="date_post_input"></input>
-                        </div>
-                        <div class="info__form-group">
-                            <h1 class="info__title">Hero Image</h1>
-                            <label class="info__image">
-                                <div class="info__image-preview-box">
-                                    <img class="info__image-preview-main img__preview" id="info__image-preview-main"
-                                        src="/images/main-camera.png" alt="Image preview" />
-                                </div>
-                                <input class="info__input info__input-hero-image" type="file"
-                                    name="main_post_image_input" accept=".jpg,.jpeg,.png,.svg"
-                                    id="main_post_image_input"></input>
-                            </label>
-                            <h2 class="info__subtitle">Size up to 10mb. Format: png, jpeg, gif.</h2>
+                            <h2 class="info__subtitle indication-for-image">Size up to 10mb. Format: png, jpeg, gif.</h2>
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Hero Image</h1>
                             <label class="info__hero-image">
                                 <div class="info__image-preview-box">
-                                    <img class="info__image-preview img__preview" src="/images/camera.png"
+                                    <img class="info__image-preview img__preview" src="/images/camera-post.png"
                                         alt="Image preview" />
                                 </div>
                                 <input class="info__input info__input-hero-image" type="file" name="post_image_input"
                                     accept=".jpg,.jpeg,.png,.svg" id="post_image_input"></input>
                             </label>
-                            <h2 class="info__subtitle">Size up to 5mb. Format: png, jpeg, gif.</h2>
+                            <div class="info__button-box">
+                                <div class="info__upload-new-button">
+                                    <div class="status-of-form__image"></div>
+                                    <span class="info__button-text">Upload New</span>
+                                </div>
+                                <button type="button" class="info__remove-button">
+                                    <div class="status-of-form__image"></div>
+                                    <span class="info__button-text">Remove</span>
+                                </button>
+                            </div>
+                            <h2 class="info__subtitle indication-for-image">Size up to 5mb. Format: png, jpeg, gif.</h2>
                         </div>
                     </div>
                     <div class="info__view">
