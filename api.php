@@ -10,18 +10,19 @@ if ($method != "POST") {
 } else {
   $dataAsJson = file_get_contents("php://input");
   $dataAsArray = json_decode($dataAsJson, true);
-  saveImage($dataAsArray['image_post']);
+  //saveImage($dataAsArray['image_post']);
   $conn = createDBConnection();
   addPost($dataAsArray, $conn);
   closeDBConnection($conn);
 }
 
-function saveImage(string $imageBase64)
+function saveImage(string $imageBase64, string $imageName)
 {
   $imageBase64Array = explode(';base64,', $imageBase64);
   $imgExtention = str_replace('data:image/', '', $imageBase64Array[0]);
   $imageDecoded = base64_decode($imageBase64Array[1]);
-  saveFile("images/my-new-post.{$imgExtention}", $imageDecoded);
+  saveFile("images/{$imageName}.{$imgExtention}", $imageDecoded);
+  return "images/{$imageName}.{$imgExtention}";
 }
 
 function saveFile(string $file, string $data): void
@@ -38,22 +39,18 @@ function saveFile(string $file, string $data): void
   } else {
     echo 'Произошла ошибка при открытии файла';
   }
-
-  function addPost(array $dataAsArray, $conn): void
-  {
-    $title = $dataAsArray['title'] ?? null;
-    $subtitle = $dataAsArray['subtitle'] ?? null;
-    $image_post = "http://localhost/images/my-new-post.jpg";
-    $content = $dataAsArray['content'] ?? null;
-    $author = $dataAsArray['author'] ?? null;
-    $publish_date = $dataAsArray['publish_date'] ?? null;
-    $author_url = $dataAsArray['author_url'] ?? null;
-    $image_author = "http://localhost/images/william-wong.png";
-    $featured = $dataAsArray['featured'] ?? null;
-    $class = $dataAsArray['class'] ?? null;
-    $sql = "INSERT INTO post(title, subtitle, image_post, content, author, publish_date, author_url, image_author, featured, class) 
-    VALUES ('$title', '$subtitle', '$image_post', '$content', '$author', '$publish_date', '$author_url', '$image_author', $featured, '$class')";
-    $conn->query($sql);
-  }
-
 }
+function addPost(array $dataAsArray, $conn): void
+{
+  $title = $dataAsArray['title'] ?? null;
+  $subtitle = $dataAsArray['subtitle'] ?? null;
+  $authorName = $dataAsArray['authorName'] ?? null;
+  $authorPhoto = saveImage($dataAsArray['authorPhoto'], $authorName);
+  $datePost = $dataAsArray['datePost'] ?? null;
+  $mainPostImage = saveImage($dataAsArray['mainPostImage'], $title);
+  $content = $dataAsArray['content'] ?? null;
+  $sql = "INSERT INTO post(title, subtitle, author, image_author, publish_date, image_post, content) 
+    VALUES ('$title', '$subtitle', '$authorName', '$authorPhoto', '$datePost', '$mainPostImage', '$content')";
+  $conn->query($sql);
+}
+

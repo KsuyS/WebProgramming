@@ -139,10 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         let form = document.forms['postForm'];
         if (validation(form)) {
-            console.log('postData', postData)
+            var json = JSON.stringify(postData)
+            fetch("api.php", {
+                method: "POST",
+                body: json
+            }).then(function (response) {
+                console.log('Data saved successfully.')
+            }).catch(function(error) {
+                console.log('An error occurred while saving.')
+            })
         }
-        
-        
     }
 
 
@@ -157,11 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
         postImageInput.addEventListener('change', onPostImageInputChange)
         contentInput.addEventListener('change', onContentInputChange)
 
-        //document.getElementById('postForm').addEventListener('submit', (event) => {
-         //   event.preventDefault();
-          //  }
-        //})
+        
     }
+
 
 
     function invalidateTitlePreview() {
