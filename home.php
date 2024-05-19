@@ -90,7 +90,7 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
                     <a class="menu__link" href="#">Travel</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Adventureion</a>
+                    <a class="menu__link" href="#">Adventure</a>
                 </li>
             </ul>
         </div>
