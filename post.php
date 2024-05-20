@@ -76,6 +76,15 @@ closeDBConnection($conn);
         </div>
     </main>
     <footer class="container footer">
+        <div class="block-email footer-block-email">
+            <p class="block-email__title">Stay in Touch</p>
+            <hr class="block-email__line">
+            <div class="block-email__part">
+                <input class="block-email__input" type="text" placeholder="Enter your email address" name="email_input"
+                    id="email_input"></input>
+                <button class="block-email__submit">Submit</button>
+            </div>
+        </div>
         <nav class="footer-nav navigation">
             <div class="nav__logo">
                 <img src="http://localhost/images/escape-white.svg" alt="Logo">

@@ -18,7 +18,7 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
 {
     $sql1 = "SELECT * FROM post WHERE featured = 0";
     $result = $conn->query($sql1);
-    
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             include 'most_recent_post_preview.php';
@@ -116,6 +116,16 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
         </div>
     </main>
     <footer class="footer container">
+        <div class="block-email footer-block-email">
+            <p class="block-email__title">Stay in Touch</p>
+            <hr class="block-email__line">
+            <div class="block-email__part">
+                <input class="block-email__input" type="text" placeholder="Enter your email address" name="email_input"
+                    id="email_input"></input>
+                <button class="block-email__submit">Submit</button>
+            </div>
+        </div>
+
         <nav class="navigation footer-navigation">
             <div class="navigation__logo">
                 <img src="http://localhost:/images/escape-white.svg" alt="Logo">

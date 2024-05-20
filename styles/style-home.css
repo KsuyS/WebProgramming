@@ -281,11 +281,56 @@
     background-image: url("../images/village.png");
     background-size: cover;
     background-position-y: 50%;
+    height: 378px;
+}
+
+.footer-block-email {
+    padding: 62px 250px 80px 250px;
+}
+
+.block-email__title {
+    font-family: "Oxygen", serif;
+    line-height: 30px;
+    font-size: 25px;
+    color: #EFEFEF;
+    padding: 1px 391px 17px 391px;
+}
+
+.block-email__line {
+    height: 1px;
+    max-width: 188px;
+    color: #DEDEDE;
+    margin: 16px 386px 20px;
+}
+
+.block-email__part {
+    padding-top: 20px;
+    padding-left: 220px;
+}
+
+.block-email__input {
+    width: 375px;
+    height: 50px;
+    padding-left: 35px;
+    border: none;
+    border-radius: 3px;
+}
+
+
+.block-email__submit {
+    width: 125px;
+    height: 51px;
+    font-size: 12px;
+    font-family: "Roboto";
+    color:#F8F8F8;
+    background-color:#FFFFFF47;
+    border: none;
+    border-radius: 3px;
 }
 
 .footer-navigation {
     background-color: #232F3899;
-    padding: 28px 240 px 27px 240px;
+    padding: 28px 240px 27px 240px;
 }
 
 .footer__link {
