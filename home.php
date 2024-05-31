@@ -32,7 +32,12 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
 <html lang="en">
 
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="private">
+    <meta http-equiv="Cache-Control" content="max-age=10800, must-revalidate">
+    <meta http-equiv="Cache-Control" content="max-age=10800, proxy-revalidate">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page</title>
     <link rel="stylesheet" href="http://localhost/styles/style-home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +49,7 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
 
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container header-container">
             <nav class="navigation">
                 <div class="navigation__logo">
                     <img src="http://localhost/images/escape-white.svg" alt="Logo">

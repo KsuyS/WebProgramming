@@ -14,10 +14,12 @@
     color: #FFFFFF;
 }
 
-.header {
+.header-container {
     background-image: url("../images/rocks.png");
     background-size: cover;
+    max-width: 1440px;
 }
+
 
 .navigation {
     display: flex;
@@ -128,17 +130,31 @@
     padding-top: 16px;
     padding-bottom: 7px;
     justify-content: space-around;
-    
+    max-width: 960px;
+    margin-left: 0;
+    position: relative;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
+
 .features__link {
+    display: block;
     text-decoration: none;
 }
 
-.features__article {
+.features__block-article {
+    position: relative;
     padding-top: 7px;
-    max-width: 960px;
     margin-bottom: 10px;
+    width: 460px;
+    z-index: 1;
+}
+
+.features__image {
+    position: absolute;
+    width: 460px;
+    height: 280px;
 }
 
 .features__article-head {
@@ -190,19 +206,7 @@
     padding-right: 10px;
 }
 
-.features__block-article1 {
-    background-image: url("../images/northern-lights.png");
-    background-size: cover;
-    width: 460px;
-    height: 280px;
-}
 
-.features__block-article2 {
-    background-image: url("../images/flashlights.png");
-    background-size: cover;
-    width: 460px;
-    height: 280px;
-}
 
 .features__part2 {
     display: flex;
@@ -210,6 +214,8 @@
     flex-direction: row;
     padding-top: 16px;
     justify-content: space-around;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .features__block {
@@ -304,6 +310,7 @@
 }
 
 .block-email__part {
+    display: flex;
     padding-top: 20px;
     padding-left: 220px;
 }
@@ -313,19 +320,19 @@
     height: 50px;
     padding-left: 35px;
     border: none;
-    border-radius: 3px;
+    border-radius: 3px 0 0 3px;
 }
 
 
 .block-email__submit {
     width: 125px;
-    height: 51px;
+    height: 50px;
     font-size: 12px;
     font-family: "Roboto";
-    color:#F8F8F8;
-    background-color:#FFFFFF47;
+    color: #F8F8F8;
+    background-color: #FFFFFF47;
     border: none;
-    border-radius: 3px;
+    border-radius: 0 3px 3px 0;
 }
 
 .footer-navigation {
