@@ -49,6 +49,10 @@
                 <div class="info__main">
                     <div class="info__post">
                         <div class="info__form-group">
+                            <label class="info__checkbox-title">Featured post:</label>
+                            <input class="info__checkbox" type="checkbox" id="IsFeaturedPost" name="IsFeaturedPost" value="0"/>
+                        </div>
+                        <div class="info__form-group">
                             <h1 class="info__title">Title</h1>
                             <input class="info__input info__input-title" type="text" placeholder="New Post"
                                 name="title_input" id="title_input"></input>
@@ -110,7 +114,8 @@
                                     </button>
                                 </div>
                             </label>
-                            <h2 class="info__subtitle indication-for-image">Size up to 10mb. Format: png, jpeg, gif.</h2>
+                            <h2 class="info__subtitle indication-for-image">Size up to 10mb. Format: png, jpeg, gif.
+                            </h2>
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Hero Image</h1>

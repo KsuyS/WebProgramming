@@ -10,7 +10,6 @@ if ($method != "POST") {
 } else {
   $dataAsJson = file_get_contents("php://input");
   $dataAsArray = json_decode($dataAsJson, true);
-  //saveImage($dataAsArray['image_post']);
   $conn = createDBConnection();
   addPost($dataAsArray, $conn);
   closeDBConnection($conn);
@@ -22,7 +21,7 @@ function saveImage(string $imageBase64, string $imageName)
   $imgExtention = str_replace('data:image/', '', $imageBase64Array[0]);
   $imageDecoded = base64_decode($imageBase64Array[1]);
   saveFile("images/{$imageName}.{$imgExtention}", $imageDecoded);
-  return "images/{$imageName}.{$imgExtention}";
+  return "http://localhost/images/{$imageName}.{$imgExtention}";
 }
 
 function saveFile(string $file, string $data): void
@@ -47,10 +46,12 @@ function addPost(array $dataAsArray, $conn): void
   $authorName = $dataAsArray['authorName'] ?? null;
   $authorPhoto = saveImage($dataAsArray['authorPhoto'], $authorName);
   $datePost = $dataAsArray['datePost'] ?? null;
-  $mainPostImage = saveImage($dataAsArray['mainPostImage'], $title);
+  $mainPostImage = saveImage($dataAsArray['mainPostImage'], $title . 'main');
+  $postImage = saveImage($dataAsArray['postImage'], $title);
+  $featured = $dataAsArray['featured'] ?? null;
   $content = $dataAsArray['content'] ?? null;
-  $sql = "INSERT INTO post(title, subtitle, author, image_author, publish_date, image_post, content) 
-    VALUES ('$title', '$subtitle', '$authorName', '$authorPhoto', '$datePost', '$mainPostImage', '$content')";
+  $sql = "INSERT INTO post(title, subtitle, author, image_author, publish_date, main_image_post, image_post, featured, content) 
+    VALUES ('$title', '$subtitle', '$authorName', '$authorPhoto', '$datePost', '$mainPostImage', '$postImage', $featured, '$content')";
   $conn->query($sql);
 }
 

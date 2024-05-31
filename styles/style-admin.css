@@ -285,6 +285,20 @@
     color: #999999;
     padding-right: 13px;
 }
+.info__checkbox-title{
+    font-family: "Oxygen", serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: #7A7A7A;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    margin-right: 5px;
+}
+
+.info__checkbox {
+    width: 12px;
+    height: 12px;
+}
 
 .info__imgs {
     width: 296px;
