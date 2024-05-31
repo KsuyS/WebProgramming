@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mainPostImage: '',
         postImage: '',
         content: '',
+        featured: '0',
     }
 
     const titleInput = document.getElementById('title_input');
@@ -80,6 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
         reader.readAsDataURL(file);
     }
 
+    function onIsFeaturedPostChange() {
+        if (document.getElementById('IsFeaturedPost').checked) {
+            postData.featured = 1
+        }
+
+    }
+
     function onContentInputChange(event) {
         postData.content = event.target.value;
     }
@@ -135,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return result
     }
 
-    function onPostFormSubmit(event) {
+    function FormSubmit(event) {
         event.preventDefault();
         let form = document.forms['postForm'];
         if (validation(form)) {
@@ -145,15 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 body: json
             }).then(function (response) {
                 console.log('Data saved successfully.')
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.log('An error occurred while saving.')
             })
         }
+        console.log(postData)
     }
 
 
     function initEventListener() {
-        postForm.addEventListener('submit', onPostFormSubmit)
+        postForm.addEventListener('submit', FormSubmit)
         titleInput.addEventListener('input', onTitleInputChange)
         subtitleInput.addEventListener('input', onSubtitleInputChange)
         authorInput.addEventListener('input', onAuthorInputChange)
@@ -161,9 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         datePostInput.addEventListener('input', onDatePostInputChange)
         mainpostImageInput.addEventListener('change', onMainPostImageInputChange)
         postImageInput.addEventListener('change', onPostImageInputChange)
+        IsFeaturedPost.addEventListener('change', onIsFeaturedPostChange)
         contentInput.addEventListener('change', onContentInputChange)
-
-        
     }
 
 
