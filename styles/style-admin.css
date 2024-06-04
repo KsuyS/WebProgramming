@@ -239,18 +239,20 @@
     line-height: 21px;
     font-size: 16px;
     color: #101315;
-    padding-top: 14px;
-    padding-left: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 14px 13px 0 20px;
 }
 
 .info__section-subhead {
     line-height: 19px;
     font-size: 13px;
     color: #7A7A7A;
-    padding-top: 7px;
-    padding-left: 13px;
-
-    padding-bottom: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 14px 13px 32px 20px;
 }
 
 .info__lab1 {
@@ -271,11 +273,15 @@
 }
 
 .info__sign-autor {
+    width: 120px;
     font-family: "Oxygen", serif;
     line-height: 35px;
     font-size: 12px;
     color: #999999;
-    padding-left: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 13px 0 20px;
 }
 
 .info__sign-date {
@@ -316,6 +322,10 @@
     line-height: 24px;
     letter-spacing: 2px;
     margin-top: 59px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding:0 20px 0 20px;
 }
 
 .info__intro-subtitle {
@@ -325,6 +335,10 @@
     opacity: 63%;
     margin-top: 4px;
     line-height: 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding:0 20px 0 20px;
 }
 
 .info__images {

@@ -32,10 +32,6 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
 <html lang="en">
 
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Cache-Control" content="private">
-    <meta http-equiv="Cache-Control" content="max-age=10800, must-revalidate">
-    <meta http-equiv="Cache-Control" content="max-age=10800, proxy-revalidate">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page</title>
@@ -54,20 +50,24 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
                 <div class="navigation__logo">
                     <img src="http://localhost/images/escape-white.svg" alt="Logo">
                 </div>
-                <ul class="navigation__list">
-                    <li class="navigation__item">
-                        <a class="navigation__link" href='/home'>Home</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Categories</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">About</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a class="navigation__link" href="#">Contact</a>
-                    </li>
-                </ul>
+                <div class="menu-nav">
+                    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                    <label for="burger-checkbox" class="burger"></label>
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a class="navigation__link" href='/home'>Home</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Categories</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">About</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
             <div class="banner">
                 <h1 class="banner__title">Let's do it together.</h1>
@@ -101,7 +101,9 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
         </div>
         <div class="features">
             <h3 class="features__heading">Featured Posts</h3>
-            <hr class="features__line">
+            <div class="features__cont-line">
+                <hr class="features__line">
+            </div>
             <div class="features__part1">
                 <?php
                 $conn = createDBConnection();
@@ -110,7 +112,9 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
                 ?>
             </div>
             <h3 class="features__heading">Most Recent</h3>
-            <hr class="features__line">
+            <div class="features__cont-line">
+                <hr class="features__line">
+            </div>
             <div class="features__part2">
                 <?php
                 $conn = createDBConnection();
@@ -124,18 +128,19 @@ function getAndPrintMostRecentPostsFromDB(mysqli $conn): void
         <div class="block-email footer-block-email">
             <p class="block-email__title">Stay in Touch</p>
             <hr class="block-email__line">
-            <div class="block-email__part">
-                <input class="block-email__input" type="text" placeholder="Enter your email address" name="email_input"
-                    id="email_input"></input>
-                <button class="block-email__submit">Submit</button>
+            <div class="block-email__cont">
+                <div class="block-email__part">
+                    <input class="block-email__input" type="text" placeholder="Enter your email address"
+                        name="email_input" id="email_input"></input>
+                    <button class="block-email__submit">Submit</button>
+                </div>
             </div>
         </div>
-
-        <nav class="navigation footer-navigation">
+        <nav class="navigation footer-nav">
             <div class="navigation__logo">
                 <img src="http://localhost:/images/escape-white.svg" alt="Logo">
             </div>
-            <ul class="navigation__list">
+            <ul class="nav__list">
                 <li class="navigation__item">
                     <a class="navigation__link footer__link" href="#">Home</a>
                 </li>

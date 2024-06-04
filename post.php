@@ -35,6 +35,7 @@ closeDBConnection($conn);
 <head>
     <meta charset="UTF-8">
     <title><?= $post["title"] ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://localhost/styles/style-post.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,12 +50,16 @@ closeDBConnection($conn);
             <div class="navigation__logo">
                 <img src="http://localhost/images/escape.svg" alt="Logo">
             </div>
-            <ul class="navigation__list">
-                <li class="navigation__item"><a class="navigation__link" href='/home'>Home</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#">Categories</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#">About</a></li>
-                <li class="navigation__item"><a class="navigation__link" href="#">Contact</a></li>
-            </ul>
+            <div class="menu">
+                <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                <label for="burger-checkbox" class="burger"></label>
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a class="navigation__link" href='/home'>Home</a></li>
+                    <li class="navigation__item"><a class="navigation__link" href="#">Categories</a></li>
+                    <li class="navigation__item"><a class="navigation__link" href="#">About</a></li>
+                    <li class="navigation__item"><a class="navigation__link" href="#">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main class="container">
@@ -67,7 +72,7 @@ closeDBConnection($conn);
             </h2>
         </div>
         <div class="images">
-            <img src="<?= $post["image_post"] ?>" alt="<?= $post["title"] ?>">
+            <img src="<?= $post["main_image_post"] ?>" alt="<?= $post["title"] ?>">
         </div>
         <div class="info">
             <p>
@@ -79,18 +84,20 @@ closeDBConnection($conn);
         <div class="block-email footer-block-email">
             <p class="block-email__title">Stay in Touch</p>
             <hr class="block-email__line">
-            <div class="block-email__part">
-                <input class="block-email__input" type="text" placeholder="Enter your email address" name="email_input"
-                    id="email_input"></input>
-                <button class="block-email__submit">Submit</button>
+            <div class="block-email__cont">
+                <div class="block-email__part">
+                    <input class="block-email__input" type="text" placeholder="Enter your email address"
+                        name="email_input" id="email_input"></input>
+                    <button class="block-email__submit">Submit</button>
+                </div>
             </div>
         </div>
         <nav class="footer-nav navigation">
             <div class="nav__logo">
                 <img src="http://localhost/images/escape-white.svg" alt="Logo">
             </div>
-            <ul class="navigation__list">
-                <li class="navigation__item"><a class="navigation__link footer__link" href="#">Home</a></li>
+            <ul class="nav__list">
+                <li class="navigation__item"><a class="navigation__link footer__link" href='/home'>Home</a></li>
                 <li class="navigation__item"><a class="navigation__link footer__link" href="#">Categories</a></li>
                 <li class="navigation__item"><a class="navigation__link footer__link" href="#">About</a></li>
                 <li class="navigation__item"><a class="navigation__link footer__link" href="#">Contact</a></li>

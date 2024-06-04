@@ -4,7 +4,7 @@ INSERT INTO post (title, subtitle, main_image_post, image_post, author, publish_
 
 INSERT INTO post (title, subtitle, main_image_post, image_post, author, publish_date, image_author, featured) VALUES ('Sunny Side Up', 'No place is ever as bad as they tell you it’s going to be.', 'http://localhost/images/bridge.png', 'http://localhost/images/bridge.png', 'Mat Vogels', '2015-09-25', 'http://localhost/images/mat-vogels.png', 0);
 
-INSERT INTO post (title, subtitle, imain_image_post, mage_post, author, publish_date, image_author, featured) VALUES ('Water Falls', 'We travel not to escape life, but for life not to escape us.', 'http://localhost/images/river.png', 'http://localhost/images/river.png', 'Mat Vogels', '2015-09-25', 'http://localhost/images/mat-vogels.png', 0);
+INSERT INTO post (title, subtitle, main_image_post, image_post, author, publish_date, image_author, featured) VALUES ('Water Falls', 'We travel not to escape life, but for life not to escape us.', 'http://localhost/images/river.png', 'http://localhost/images/river.png', 'Mat Vogels', '2015-09-25', 'http://localhost/images/mat-vogels.png', 0);
 
 INSERT INTO post (title, subtitle, main_image_post, image_post, author, publish_date, image_author, featured) VALUES ('Through the Mist', 'Travel makes you see what a tiny place you occupy in the world.', 'http://localhost/images/ocean.png', 'http://localhost/images/ocean.png', 'William Wong', '2015-09-25', 'http://localhost/images/william-wong.png', 0);
 
