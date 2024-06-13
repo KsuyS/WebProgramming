@@ -1,3 +1,9 @@
+<!-- <?php
+    $password = 'admin3';
+    $salt = 'library';
+    echo(md5(md5($password) . $salt));
+?>  -->
+
 <html lang="en">
 
 <head>
@@ -26,16 +32,21 @@
                 <div class="intro__block-container">
                     <div class="intro__block">
                         <h1 class="intro__header">Log In</h1>
+                        <div class="status-of-form">
+                            <div class="status-of-form__image"></div>
+                            <span class="status-of-form__mess"></span>
+                        </div>
                         <div class="intro__login">
                             <div class="intro__form-group">
                                 <label class="intro__title">Email</label>
-                                <input class="intro__input intro__input-email" type="text" id="inputEmail"
-                                    name="inputEmail" />
+                                <input class="intro__input intro__input-email" type="text" id="email_input"
+                                    name="email_input" />
                             </div>
                             <div class="intro__form-group">
                                 <label class="intro__title">Password</label>
-                                <input class="intro__input intro__input-password" type="text" id="inputPassword"
-                                    name="inputPassword" />
+                                <input class="intro__input intro__input-password" type="password" id="password_input"
+                                    name="password_input" />
+                                <span class="pass-icon" id="pass-icon"><img src="http://localhost/images/eye.svg"></span>
                             </div>
                         </div>
                         <button class="intro__but-login" type="submit" value="logIn">Log in</button>
@@ -44,7 +55,7 @@
             </div>
         </div>
     </form>
-    <script defer src="js/log.js"></script>
+    <script defer src="js/login.js"></script>
     <footer class="footer container">
     </footer>
 </body>

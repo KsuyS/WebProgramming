@@ -29,7 +29,13 @@
 
 .navigation__avatar {
     margin-right: 4px;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    border-radius: 50px;
 }
+
+
 
 .navigation__menu-item {
     margin-left: 4px;
@@ -291,7 +297,8 @@
     color: #999999;
     padding-right: 13px;
 }
-.info__checkbox-title{
+
+.info__checkbox-title {
     font-family: "Oxygen", serif;
     font-size: 16px;
     line-height: 16px;
@@ -325,7 +332,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding:0 20px 0 20px;
+    padding: 0 20px 0 20px;
 }
 
 .info__intro-subtitle {
@@ -338,7 +345,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    padding:0 20px 0 20px;
+    padding: 0 20px 0 20px;
 }
 
 .info__images {

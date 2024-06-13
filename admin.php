@@ -1,3 +1,14 @@
+<?php
+$redirectUrl = "/login";
+session_start();
+if ($_SESSION['log'] != 'user') {
+    header('Location: ' . $redirectUrl, true, 303);
+}
+
+$letter = $_SESSION['email'][0];
+$color = $_SESSION['color'];
+?>
+
 <html lang="en">
 
 <head>
@@ -19,12 +30,14 @@
                     <img src="http://localhost/images/escape-author-white.svg" alt="Logo">
                 </div>
                 <div class="navigation__menu">
-                    <div class="navigation__avatar">
-                        <img src="http://localhost/images/avatar.svg" alt="Avatar">
+                    <div class="navigation__avatar" style="background-color: <?= $color ?>;">
+                        <p class="navigation__avatar-letter" style="font-size: 15px; margin-left: 10px; margin-top: 5px; color: white;"><?= $letter ?></p>
                     </div>
-                    <div class="navigation__menu-item">
-                        <img src="http://localhost/images/menu-item.svg" alt="Menu Item">
-                    </div>
+                    <a href="http://localhost/api-logout.php">
+                        <div class="navigation__menu-item">
+                            <img src="http://localhost/images/menu-item.svg" alt="Menu Item">
+                        </div>
+                    </a>
                 </div>
             </nav>
 
@@ -50,23 +63,24 @@
                     <div class="info__post">
                         <div class="info__form-group">
                             <label class="info__checkbox-title">Featured post:</label>
-                            <input class="info__checkbox" type="checkbox" id="IsFeaturedPost" name="IsFeaturedPost" value="0"/>
+                            <input class="info__checkbox" type="checkbox" id="IsFeaturedPost" name="IsFeaturedPost"
+                                value="0" />
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Title</h1>
                             <input class="info__input info__input-title" type="text" placeholder="New Post"
-                                name="title_input" id="title_input"></input>
+                                name="title_input" id="title_input" maxlength="255"></input>
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Short description</h1>
                             <input class="info__input info__input-description" type="text"
                                 placeholder="Please, enter any description" name="subtitle_input"
-                                id="subtitle_input"></input>
+                                id="subtitle_input" maxlength="255"></input>
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Author name</h1>
                             <input class="info__input info__input-author-name" type="text" name="author_input"
-                                id="author_input"></input>
+                                id="author_input" maxlength="255"></input>
                         </div>
                         <div class="info__form-group">
                             <h1 class="info__title">Author Photo </h1>

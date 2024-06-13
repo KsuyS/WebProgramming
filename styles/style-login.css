@@ -15,10 +15,12 @@
 .intro {
     background-image: url("../images/mainAdmin.jpeg");
     background-size: cover;
+    min-height: 100%;
 }
 
 .intro__container {
     background-color: #42464966;
+    min-height: 100%;
 }
 
 .intro__block-image {
@@ -39,7 +41,6 @@
     line-height: 16px;
     color: #7A7A7A;
     padding-bottom: 5px;
-    margin-top: 50px;
 }
 
 .intro__input {
@@ -50,8 +51,13 @@
     padding: 4px 8px;
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 40px;
     border-bottom: 1px solid #EAEAEA;
+    margin-bottom: 5px;
+}
+
+.intro__form-group {
+    margin-bottom: 40px;
+    position: relative;
 }
 
 .intro__but-login {
@@ -61,9 +67,64 @@
     line-height: 24px;
     color: #FFFFFF;
     border-radius: 3px;
-    margin-top: 10px;
     border: none;
 }
+
+.label-error {
+    font-family: "Oxygen", serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #E86961;
+}
+
+.form-error {
+    border-color: #E86961;
+}
+
+.status-of-form {
+    padding: 10px 12px 10px 12px;
+    border-radius: 5px 0 0 px;
+    display: none;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    margin-top: 41px;
+    transition: 0.3s;
+}
+
+.status-of-form_error {
+    background-color: #FFEBEA;
+    border-left: 2px solid #E86961;
+    display: flex;
+}
+
+.status-of-form__image {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.status-of-form_error .status-of-form__image {
+    background-image: url("/images/error.svg")
+}
+
+.status-of-form__mess {
+    font: 400 14px/20px Oxygen;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.intro__input-password {
+    position: relative;
+}
+
+.pass-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 25px;
+}
+
 
 @media screen and (min-width: 420px) {
     .container {
@@ -76,7 +137,7 @@
 
     .intro__image {
         width: 250px;
-        margin: 50px 0 20px 0;
+        margin: 150px 0 20px 0;
     }
 
     .intro__block {
@@ -112,6 +173,11 @@
         padding: 10px 20px;
         margin-left: 20px;
     }
+
+    .status-of-form {
+        max-width: 250px;
+        margin-left: 15px;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -121,7 +187,7 @@
 
     .intro__image {
         width: 300px;
-        margin: 60px 0 30px 0;
+        margin: 120px 0 30px 0;
     }
 
     .intro__block {
@@ -156,6 +222,11 @@
         margin-left: 40px;
     }
 
+    .status-of-form {
+        max-width: 270px;
+        margin-left: 40px;
+    }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -165,13 +236,13 @@
 
     .intro__image {
         width: 340px;
-        margin: 70px 0 40px 0;
+        margin: 120px 0 40px 0;
     }
 
     .intro__block {
         width: 440px;
         height: 480px;
-        margin-top: 80px;
+        margin-top: 120px;
         margin-bottom: 80px;
     }
 
@@ -192,6 +263,11 @@
     .intro__but-login {
         font-size: 16px;
     }
+
+    .status-of-form {
+        max-width: 330px;
+        margin-left: 40px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -206,14 +282,14 @@
 
     .intro__image {
         width: 380px;
-        margin: 240px 0 0 80px;
+        margin: 400px 0 0 80px;
     }
 
     .intro__block {
         width: 480px;
         height: 520px;
-        margin-top: 80px;
-        margin-bottom: 80px;
+        margin-top: 250px;
+        margin-bottom: 0px;
         margin-right: 80px;
     }
 
@@ -225,6 +301,11 @@
     .intro__input {
         width: 370px;
     }
+
+    .status-of-form {
+        max-width: 400px;
+        margin-left: 40px;
+    }
 }
 
 @media screen and (min-width: 1366px) {
@@ -234,12 +315,12 @@
     }
 
     .intro__image {
-        margin: 300px 150px 0 230px;
+        margin: 400px 150px 0 230px;
     }
 
     .intro__block {
         height: 560px;
-        margin-top: 120px;
+        margin-top: 250px;
         margin-bottom: 120px;
         margin-right: 130px;
     }
